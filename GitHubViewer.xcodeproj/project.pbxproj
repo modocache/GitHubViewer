@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB460A87F6D24FB889CABC30 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2D502E8B7A44DF8A53BFFD /* libPods.a */; };
+		DAA1B3AC18CF1FD80015CF7A /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA1B3AB18CF1FD80015CF7A /* Config.m */; };
 		DAD95BEC18BE342500BFA893 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD95BEB18BE342500BFA893 /* Foundation.framework */; };
 		DAD95BEE18BE342500BFA893 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD95BED18BE342500BFA893 /* CoreGraphics.framework */; };
 		DAD95BF018BE342500BFA893 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD95BEF18BE342500BFA893 /* UIKit.framework */; };
@@ -41,6 +42,7 @@
 		497E9670326E4B2DAB68EA14 /* Pods-GitHubViewerTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubViewerTests.xcconfig"; path = "Pods/Pods-GitHubViewerTests.xcconfig"; sourceTree = "<group>"; };
 		5F3939D759B14277B11ED19C /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8E2D502E8B7A44DF8A53BFFD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAA1B3AB18CF1FD80015CF7A /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		DAD95BE818BE342500BFA893 /* GitHubViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD95BEB18BE342500BFA893 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DAD95BED18BE342500BFA893 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -151,6 +153,7 @@
 		DAD95C0A18BE342500BFA893 /* GitHubViewerTests */ = {
 			isa = PBXGroup;
 			children = (
+				DAA1B3AB18CF1FD80015CF7A /* Config.m */,
 				DAD95C2218BE356100BFA893 /* Controllers */,
 				DAD95C2418BE356100BFA893 /* Models */,
 				DAD95C0B18BE342500BFA893 /* Supporting Files */,
@@ -376,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAD95C2718BE356100BFA893 /* GHVAPIClientSpec.m in Sources */,
+				DAA1B3AC18CF1FD80015CF7A /* Config.m in Sources */,
 				DAD95C2618BE356100BFA893 /* GHVRepositoriesViewControllerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,12 +27,17 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - Kiwi/XCTest
+  - Kiwi/XCTest (from `https://github.com/sharplet/Kiwi.git`, commit `bda0f6483b773a9b8f30d1330b48cdf2814bb3e6`)
   - Nocilla
+
+EXTERNAL SOURCES:
+  Kiwi:
+    :commit: bda0f6483b773a9b8f30d1330b48cdf2814bb3e6
+    :git: https://github.com/sharplet/Kiwi.git
 
 SPEC CHECKSUMS:
   AFNetworking: e8cfd8f3fe3bfe19124a0cc63f4d45752d892a56
-  Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
+  Kiwi: 7d3624a9be02704096ca0c440c0d8be66b2cd628
   Nocilla: 0c8075046df476b1bc6482caa7f6a69db1a9b277
 
 COCOAPODS: 0.29.0

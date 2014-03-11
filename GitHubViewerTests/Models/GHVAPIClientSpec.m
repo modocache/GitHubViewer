@@ -13,16 +13,8 @@
 
 SPEC_BEGIN(GHVAPIClientSpec)
 
-beforeAll(^{
-    [[LSNocilla sharedInstance] start];
-});
-
 afterEach(^{
     [[LSNocilla sharedInstance] clearStubs];
-});
-
-afterAll(^{
-    [[LSNocilla sharedInstance] stop];
 });
 
 describe(@"GHVAPIClient", ^{
