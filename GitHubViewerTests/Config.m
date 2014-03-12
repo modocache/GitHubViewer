@@ -12,13 +12,13 @@
 
 CONFIG_START
 
-beforeAll(^{
+beforeAllSpecs(^{
     NSLog(@"This should prevent network tests from hitting GitHub, but they still go through, "
           @"which means this code isn't being executed...");
     [[LSNocilla sharedInstance] start];
 });
 
-afterAll(^{
+afterAllSpecs(^{
     NSLog(@"The log statements aren't being printed out, either...");
     [[LSNocilla sharedInstance] stop];
 });
