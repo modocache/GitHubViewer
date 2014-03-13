@@ -18,21 +18,25 @@ PODS:
   - AFNetworking/UIKit (2.2.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Kiwi/ARC (2.2.3)
-  - Kiwi/NonARC (2.2.3)
-  - Kiwi/XCTest (2.2.3):
+  - Kiwi/ARC (2.2.4)
+  - Kiwi/NonARC (2.2.4)
+  - Kiwi/XCTest (2.2.4):
     - Kiwi/ARC
     - Kiwi/NonARC
   - Nocilla (0.8.1)
 
 DEPENDENCIES:
   - AFNetworking
-  - Kiwi/XCTest
+  - Kiwi/XCTest (from `https://github.com/allending/Kiwi`)
   - Nocilla
+
+EXTERNAL SOURCES:
+  Kiwi:
+    :git: https://github.com/allending/Kiwi
 
 SPEC CHECKSUMS:
   AFNetworking: e8cfd8f3fe3bfe19124a0cc63f4d45752d892a56
-  Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
+  Kiwi: 772d965b130a0768c867363baa4d2639473254e8
   Nocilla: 0c8075046df476b1bc6482caa7f6a69db1a9b277
 
 COCOAPODS: 0.29.0
