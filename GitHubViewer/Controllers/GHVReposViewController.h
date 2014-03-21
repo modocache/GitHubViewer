@@ -1,5 +1,5 @@
 //
-//  GHVRepositoriesViewController.h
+//  GHVReposViewController.h
 //  GitHubViewer
 //
 //  Created by Brian Ivan Gesiak on 2/26/14.
@@ -10,8 +10,10 @@
 
 @class GHVAPIClient;
 
-@interface GHVRepositoriesViewController : UITableViewController
+@interface GHVReposViewController : UITableViewController
 
+@property (nonatomic, strong, readonly) GHVAPIClient *apiClient;
+@property (nonatomic, copy, readonly) NSString *username;
 @property (nonatomic, strong, readonly) NSArray *repositories;
 
 - (id)initWithAPIClient:(GHVAPIClient *)apiClient

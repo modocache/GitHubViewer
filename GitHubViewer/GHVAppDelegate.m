@@ -8,7 +8,7 @@
 
 #import "GHVAppDelegate.h"
 #import "GHVAPIClient.h"
-#import "GHVRepositoriesViewController.h"
+#import "GHVReposViewController.h"
 
 @implementation GHVAppDelegate
 
@@ -19,9 +19,12 @@
     self.window.backgroundColor = [UIColor whiteColor];
 
     GHVAPIClient *apiClient = [GHVAPIClient new];
-    self.window.rootViewController =
-        [[GHVRepositoriesViewController alloc] initWithAPIClient:apiClient
-                                                        username:@"modocache"];
+    GHVReposViewController *viewController =
+        [[GHVReposViewController alloc] initWithAPIClient:apiClient
+                                                 username:@"modocache"];
+    UINavigationController *navigationController =
+        [[UINavigationController alloc] initWithRootViewController:viewController];
+    self.window.rootViewController = navigationController;
 
     [self.window makeKeyAndVisible];
     return YES;

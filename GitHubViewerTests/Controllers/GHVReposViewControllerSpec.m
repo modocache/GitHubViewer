@@ -8,20 +8,20 @@
 
 
 #import <Kiwi/Kiwi.h>
-#import "GHVRepositoriesViewController.h"
+#import "GHVReposViewController.h"
 #import "GHVAPIClient.h"
 
-SPEC_BEGIN(GHVRepositoriesViewControllerSpec)
+SPEC_BEGIN(GHVReposViewControllerSpec)
 
-describe(@"GHVRepositoriesViewController", ^{
+describe(@"GHVReposViewController", ^{
     __block GHVAPIClient *client = nil;
     __block NSString *username = nil;
-    __block GHVRepositoriesViewController *controller = nil;
+    __block GHVReposViewController *controller = nil;
     beforeEach(^{
         client = [GHVAPIClient mock];
         username = @"allending";
-        controller = [[GHVRepositoriesViewController alloc] initWithAPIClient:client
-                                                                     username:username];
+        controller = [[GHVReposViewController alloc] initWithAPIClient:client
+                                                              username:username];
     });
 
     describe(@"-viewDidLoad", ^{

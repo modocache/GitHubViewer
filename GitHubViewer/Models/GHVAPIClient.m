@@ -7,6 +7,7 @@
 //
 
 #import "GHVAPIClient.h"
+#import "GHVRepo.h"
 #import <AFNetworking/AFNetworking.h>
 
 @implementation GHVAPIClient
@@ -26,7 +27,11 @@
          success:^(AFHTTPRequestOperation *operation,
                    id responseObject) {
              if (success) {
-                 success(responseObject);
+                 NSMutableArray *repositories = [NSMutableArray array];
+                 for (NSDictionary *dictionary in responseObject) {
+                     [repositories addObject:[[GHVRepo alloc] initWithJSONDictionary:dictionary]];
+                 }
+                 success([repositories copy]);
              }
          }
          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
