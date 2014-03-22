@@ -1,0 +1,5 @@
+language: objective-c
+before_install:
+  - gem install cocoapods
+  - pod install
+script: xcodebuild -workspace GitHubViewer.xcworkspace -scheme GitHubViewer -sdk iphonesimulator test
