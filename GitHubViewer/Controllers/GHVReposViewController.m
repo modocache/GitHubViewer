@@ -7,13 +7,11 @@
 //
 
 #import "GHVReposViewController.h"
-#import "GHVAPIClient.h"
 #import "GHVRepo.h"
+#import "GHVRepoStore.h"
 #import "GHVRepoViewController.h"
 #import "UIAlertView+GHVError.h"
 #import <SVProgressHUD/SVProgressHUD.h>
-
-static NSString * const kGHVRepoCellIdentifier = @"GHVRepoCellIdentifier";
 
 @interface GHVReposViewController ()
 @property (nonatomic, strong) NSArray *repositories;
@@ -23,11 +21,10 @@ static NSString * const kGHVRepoCellIdentifier = @"GHVRepoCellIdentifier";
 
 #pragma mark - Object Lifecycle
 
-- (id)initWithAPIClient:(GHVAPIClient *)apiClient username:(NSString *)username {
+- (id)initWithRepoStore:(GHVRepoStore *)repoStore {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
-        _apiClient = apiClient;
-        _username = username;
+        _repoStore = repoStore;
     }
     return self;
 }
@@ -38,33 +35,15 @@ static NSString * const kGHVRepoCellIdentifier = @"GHVRepoCellIdentifier";
     [super viewDidLoad];
 
     self.title = NSLocalizedString(@"Repositories", nil);
-    [self getRepositories];
-}
-
-#pragma mark - UITableViewDataSource Protocol Methods
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
-    return [self.repositories count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell =
-        [tableView dequeueReusableCellWithIdentifier:kGHVRepoCellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                      reuseIdentifier:kGHVRepoCellIdentifier];
-    }
-
-    GHVRepo *repository = self.repositories[indexPath.row];
-    cell.textLabel.text = repository.name;
-    cell.detailTextLabel.text = repository.repositoryDescription;
-    return cell;
+    self.tableView.dataSource = self.repoStore;
+    [self startNetworkIndicators];
+    [self.repoStore reloadRepositories:^{
+        [self stopNetworkIndicators];
+        [self.tableView reloadData];
+    } failure:^(NSError *error) {
+        [self stopNetworkIndicators];
+        [UIAlertView showAlertForError:error];
+    }];
 }
 
 #pragma mark - UITableViewDelegate Protocol Methods
@@ -79,20 +58,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark - Internal Methods
-
-- (void)getRepositories {
-    [self startNetworkIndicators];
-    [self.apiClient
-        allRepositoriesForUsername:self.username
-                           success:^(NSArray *repositories) {
-                               [self stopNetworkIndicators];
-                               self.repositories = repositories;
-                               [self.tableView reloadData];
-                           } failure:^(NSError *error) {
-                               [self stopNetworkIndicators];
-                               [UIAlertView showAlertForError:error];
-                           }];
-}
 
 - (void)startNetworkIndicators {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;

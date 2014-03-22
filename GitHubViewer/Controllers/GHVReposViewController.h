@@ -8,15 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class GHVAPIClient;
+@class GHVRepoStore;
 
 @interface GHVReposViewController : UITableViewController
 
-@property (nonatomic, strong, readonly) GHVAPIClient *apiClient;
-@property (nonatomic, copy, readonly) NSString *username;
+@property (nonatomic, strong, readonly) GHVRepoStore *repoStore;
 @property (nonatomic, strong, readonly) NSArray *repositories;
 
-- (id)initWithAPIClient:(GHVAPIClient *)apiClient
-               username:(NSString *)username;
+- (id)initWithRepoStore:(GHVRepoStore *)repoStore;
 
 @end

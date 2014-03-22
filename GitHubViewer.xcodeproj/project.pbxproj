@@ -11,6 +11,11 @@
 		DA996CAB18DCA30F00BBF841 /* GHVRepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA996CAA18DCA30F00BBF841 /* GHVRepoViewController.m */; };
 		DA996CAE18DCA33F00BBF841 /* GHVRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA996CAD18DCA33F00BBF841 /* GHVRepo.m */; };
 		DA996CB218DCA37B00BBF841 /* UIAlertView+GHVError.m in Sources */ = {isa = PBXBuildFile; fileRef = DA996CB118DCA37B00BBF841 /* UIAlertView+GHVError.m */; };
+		DA996CB518DCCCD000BBF841 /* GHVRepoStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DA996CB418DCCCD000BBF841 /* GHVRepoStore.m */; };
+		DA996DE618DDD82D00BBF841 /* UIAlertView+GHVErrorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = DA996DE518DDD82D00BBF841 /* UIAlertView+GHVErrorSpec.m */; };
+		DA996DE818DDDA7A00BBF841 /* GHVRepoSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = DA996DE718DDDA7A00BBF841 /* GHVRepoSpec.m */; };
+		DA996DEA18DE210D00BBF841 /* GHVRepoStoreSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = DA996DE918DE210D00BBF841 /* GHVRepoStoreSpec.m */; };
+		DA996DEC18DE24AF00BBF841 /* GHVRepoViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = DA996DEB18DE24AF00BBF841 /* GHVRepoViewControllerSpec.m */; };
 		DAD95BEC18BE342500BFA893 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD95BEB18BE342500BFA893 /* Foundation.framework */; };
 		DAD95BEE18BE342500BFA893 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD95BED18BE342500BFA893 /* CoreGraphics.framework */; };
 		DAD95BF018BE342500BFA893 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD95BEF18BE342500BFA893 /* UIKit.framework */; };
@@ -50,6 +55,12 @@
 		DA996CAD18DCA33F00BBF841 /* GHVRepo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHVRepo.m; sourceTree = "<group>"; };
 		DA996CB018DCA37B00BBF841 /* UIAlertView+GHVError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+GHVError.h"; sourceTree = "<group>"; };
 		DA996CB118DCA37B00BBF841 /* UIAlertView+GHVError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+GHVError.m"; sourceTree = "<group>"; };
+		DA996CB318DCCCD000BBF841 /* GHVRepoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHVRepoStore.h; sourceTree = "<group>"; };
+		DA996CB418DCCCD000BBF841 /* GHVRepoStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHVRepoStore.m; sourceTree = "<group>"; };
+		DA996DE518DDD82D00BBF841 /* UIAlertView+GHVErrorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+GHVErrorSpec.m"; sourceTree = "<group>"; };
+		DA996DE718DDDA7A00BBF841 /* GHVRepoSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHVRepoSpec.m; sourceTree = "<group>"; };
+		DA996DE918DE210D00BBF841 /* GHVRepoStoreSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHVRepoStoreSpec.m; sourceTree = "<group>"; };
+		DA996DEB18DE24AF00BBF841 /* GHVRepoViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHVRepoViewControllerSpec.m; sourceTree = "<group>"; };
 		DAD95BE818BE342500BFA893 /* GitHubViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD95BEB18BE342500BFA893 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DAD95BED18BE342500BFA893 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,6 +115,14 @@
 			children = (
 				DA996CB018DCA37B00BBF841 /* UIAlertView+GHVError.h */,
 				DA996CB118DCA37B00BBF841 /* UIAlertView+GHVError.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		DA996DE418DDD81200BBF841 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DA996DE518DDD82D00BBF841 /* UIAlertView+GHVErrorSpec.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -172,6 +191,7 @@
 			children = (
 				DAD95C2218BE356100BFA893 /* Controllers */,
 				DAD95C2418BE356100BFA893 /* Models */,
+				DA996DE418DDD81200BBF841 /* Categories */,
 				DAD95C0B18BE342500BFA893 /* Supporting Files */,
 			);
 			path = GitHubViewerTests;
@@ -202,6 +222,8 @@
 			children = (
 				DAD95C1E18BE355000BFA893 /* GHVAPIClient.h */,
 				DAD95C1F18BE355000BFA893 /* GHVAPIClient.m */,
+				DA996CB318DCCCD000BBF841 /* GHVRepoStore.h */,
+				DA996CB418DCCCD000BBF841 /* GHVRepoStore.m */,
 				DA996CAC18DCA33F00BBF841 /* GHVRepo.h */,
 				DA996CAD18DCA33F00BBF841 /* GHVRepo.m */,
 			);
@@ -212,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD95C2318BE356100BFA893 /* GHVReposViewControllerSpec.m */,
+				DA996DEB18DE24AF00BBF841 /* GHVRepoViewControllerSpec.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -220,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				DAD95C2518BE356100BFA893 /* GHVAPIClientSpec.m */,
+				DA996DE918DE210D00BBF841 /* GHVRepoStoreSpec.m */,
+				DA996DE718DDDA7A00BBF841 /* GHVRepoSpec.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -388,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA996CAB18DCA30F00BBF841 /* GHVRepoViewController.m in Sources */,
+				DA996CB518DCCCD000BBF841 /* GHVRepoStore.m in Sources */,
 				DAD95C2018BE355000BFA893 /* GHVReposViewController.m in Sources */,
 				DAD95BFC18BE342500BFA893 /* GHVAppDelegate.m in Sources */,
 				DA996CB218DCA37B00BBF841 /* UIAlertView+GHVError.m in Sources */,
@@ -401,7 +427,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA996DEA18DE210D00BBF841 /* GHVRepoStoreSpec.m in Sources */,
+				DA996DEC18DE24AF00BBF841 /* GHVRepoViewControllerSpec.m in Sources */,
 				DAD95C2718BE356100BFA893 /* GHVAPIClientSpec.m in Sources */,
+				DA996DE618DDD82D00BBF841 /* UIAlertView+GHVErrorSpec.m in Sources */,
+				DA996DE818DDDA7A00BBF841 /* GHVRepoSpec.m in Sources */,
 				DAD95C2618BE356100BFA893 /* GHVReposViewControllerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

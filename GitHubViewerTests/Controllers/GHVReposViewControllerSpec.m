@@ -1,37 +1,31 @@
 //
-//  GHVRepositoriesViewControllerSpec.m
+//  GHVReposViewControllerSpec.m
 //  GitHubViewer
 //
 //  Created by Brian Ivan Gesiak on 2/26/14.
 //  Copyright (c) 2014 modocache. All rights reserved.
 //
 
-
 #import <Kiwi/Kiwi.h>
 #import "GHVReposViewController.h"
-#import "GHVAPIClient.h"
+#import "GHVRepoStore.h"
 
 SPEC_BEGIN(GHVReposViewControllerSpec)
 
 describe(@"GHVReposViewController", ^{
-    __block GHVAPIClient *client = nil;
-    __block NSString *username = nil;
+    __block GHVRepoStore *repoStore = nil;
     __block GHVReposViewController *controller = nil;
     beforeEach(^{
-        client = [GHVAPIClient mock];
-        username = @"allending";
-        controller = [[GHVReposViewController alloc] initWithAPIClient:client
-                                                              username:username];
+        repoStore = [GHVRepoStore mock];
+        controller = [[GHVReposViewController alloc] initWithRepoStore:repoStore];
     });
 
     describe(@"-viewDidLoad", ^{
-        it(@"loads the repositories", ^{
-            [[client should] receive:@selector(allRepositoriesForUsername:success:failure:)
-                       withArguments:username, [KWAny any], [KWAny any]];
+        it(@"reloads the repositories", ^{
+            [[repoStore should] receive:@selector(reloadRepositories:failure:)];
             [controller view];
         });
     });
 });
 
 SPEC_END
-

@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 modocache. All rights reserved.
 //
 
-
 #import <Kiwi/Kiwi.h>
 #import <LSNocilla.h>
 #import "GHVAPIClient.h"
@@ -38,7 +37,7 @@ describe(@"GHVAPIClient", ^{
                         @"users/(.*?)/repos".regex)
             .andReturn(200)
             .withHeaders(@{@"Content-Type": @"application/json"})
-            .withBody(@"[\"repo-1\"]");
+            .withBody(@"[{},{}]");
         });
 
         it(@"gets repositories", ^{
@@ -49,7 +48,7 @@ describe(@"GHVAPIClient", ^{
                                        } failure:nil];
 
             [[expectFutureValue(allRepos) shouldEventually]
-                haveCountOf:1];
+                haveCountOf:2];
         });
     });
 
